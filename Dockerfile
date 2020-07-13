@@ -1,7 +1,7 @@
 FROM debian:9-slim
 
 ENV IDF_PATH /opt/esp-idf
-ENV IDF_VERSION v4.0
+ENV IDF_VERSION v4.0.1
 
 RUN apt update && \
         apt install -y git wget flex bison gperf cmake ninja-build ccache libffi-dev libssl-dev python3 python3-pip python3-setuptools libusb-1.0-0 libncurses-dev && \
