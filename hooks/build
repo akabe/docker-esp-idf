@@ -1,0 +1,27 @@
+#!/bin/bash
+
+set -eu
+
+printenv
+
+case "$DOCKER_TAG" in
+    *-armhf )
+        MKSPIFFS_ARCH=linux-armhf
+        ;;
+    *-linux32 )
+        MKSPIFFS_ARCH=linux32
+        ;;
+    * )
+        MKSPIFFS_ARCH=linux64
+        ;;
+esac
+
+cat <<EOF
+============================================================
+MKSPIFFS_ARCH = $MKSPIFFS_ARCH
+============================================================
+EOF
+
+echo "Start docker-build..."
+
+docker build --build-arg MKSPIFFS_ARCH=$MKSPIFFS_ARCH -t $IMAGE_NAME .
