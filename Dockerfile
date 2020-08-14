@@ -3,7 +3,7 @@ FROM debian:9-slim
 ARG MKSPIFFS_ARCH
 
 ENV IDF_PATH /opt/esp-idf
-ENV IDF_VERSION v4.0.1
+ENV IDF_VERSION v4.3-dev
 ENV MKSPIFFS_VERSION 0.2.3
 
 RUN apt update && \
